@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ver Pais</title>
+    <title>Ver Municipio</title>
 </head>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -30,54 +30,69 @@
         <td><a href="{{ route('ViewConvenio') }}"> Ver Convenio</a></td>
     </tr>
 </table> <br><br><br><br>
+  
+<body>
 
-<body> 
     <table border>
-        <tr>
-            <td>Nombre del pais</td> 
-        </tr> 
-        <tr>
-            @foreach ($objeto as $pais)       
-            <td>{{ $pais->NombrePaisCurso }} </td> 
+    <tr> 
+        <td>Numero de Cursos</td> 
+        <td>Nombre de Curso</td>
+        <td>Estado del Durso</td>
+        <td>Tipo del Curso</td>
+        <td>Jornada</td>
+        <td>Municipio al que pertenece</td>
+        <td>Sector al que pertenece</td>
+
+        <td>Acciones</td>
+    </tr>
+    <tr>
+        @foreach ($info as $item)
+            <td>{{$item->NumeroCursos}}</td> 
+            <td>{{$item->NombreCurso}}</td> 
+            <td>{{$item->EstadoCurso}}</td> 
+            <td>{{$item->TipoCurso}}</td> 
+            <td>{{$item->NombreJornada}}</td>
+            <td>{{$item->NombreMunicipioCurso}}</td>
+            <td>{{$item->NombreSector}}</td> 
+
             <td>
-                <button onclick="eliminar( {{$pais->id}} )">Eliminar</button>
-                <a href=" {{ route('ViewUpdate', $pais) }}"><i>Actualizar</i></a>
+                <button onclick="eliminar( {{$item->id}} )">Eliminar</button>
+                <a href="{{ route('ViewUpdateCurso', $item->id) }}" ><i>Actualizar</i></a>
             </td>
-           
-        </tr> 
-        @endforeach
-    </table>
+    </tr>         
+    @endforeach
+
+</table>
 
 
-
-<script type="text/javascript">
+<script type="text/javascript">            
+    function eliminar(id){
             
-        function eliminar(id){
-                
-            swal({
-                title: "¿Estas seguro de eliminar?",
-                text: "Si eliminas este programa no podra ser recuperado",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                
-            .then((willDelete) => {
-                           
-                if (willDelete) {
-                    location.href = "delete/" + id + "/";
-                
-                    swal("Poof! El programa fue eliminado!", {
-                    icon: "success",
-                    });    
-                
-                } else {
-                    swal("El programa no se elimino");
-                }
-            });     
-        }
-                
-                
+        swal({
+            title: "¿Estas seguro de eliminar?",
+            text: "Si eliminas este programa no podra ser recuperado",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            
+        .then((willDelete) => {
+                       
+            if (willDelete) {
+                location.href = "delete/" + id + "/";
+            
+                swal("Poof! El programa fue eliminado!", {
+                icon: "success",
+                });    
+            
+            } else {
+                swal("El programa no se elimino");
+            }
+        });     
+    }
+            
+            
 </script>    
+
 </body>
 </html>

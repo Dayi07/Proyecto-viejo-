@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ver Pais</title>
+    <title>Ver Sector</title>
 </head>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+ 
 <table border>
     <tr>
         <td><a href="{{ route('ViewInsertMunicipio') }}"> Insertar Municipio  </a></td>
@@ -34,14 +35,16 @@
 <body> 
     <table border>
         <tr>
-            <td>Nombre del pais</td> 
+            <td>Nombre del Sector</td> 
+            <td>Nombre del Nuevo Sector</td>
         </tr> 
         <tr>
-            @foreach ($objeto as $pais)       
-            <td>{{ $pais->NombrePaisCurso }} </td> 
+            @foreach ($sector as $item)       
+            <td>{{ $item->NombreSector }}</td> 
+            <td>{{ $item->NombreNuevoSector }}</td>
             <td>
-                <button onclick="eliminar( {{$pais->id}} )">Eliminar</button>
-                <a href=" {{ route('ViewUpdate', $pais) }}"><i>Actualizar</i></a>
+                <button onclick="eliminar( {{$item->id}} )">Eliminar</button>
+                <a href=" {{ route('DatosUpdateSector', $item->id) }}">Actualizar</a>
             </td>
            
         </tr> 

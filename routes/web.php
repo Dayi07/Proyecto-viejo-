@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome'); 
 });
 
-#region pais
+#region pais 
 Route::get('Pais/insert', 'PaisController@ViewInsert')->name('ViewInsert');
 Route::post('Pais/insert', 'PaisController@Insert')->name('Insert');
 Route::get('Pais/view', 'PaisController@View')->name('ViewPais');
@@ -47,3 +47,48 @@ Route::get('Departamento/update/{id}', 'DepartamentoController@DatosUpdate')->na
 Route::post('Departamento/update', 'DepartamentoController@UpdateDep')->name('UpdateDep');
 #endregion
 
+#region jornada
+Route::get('Jornada/insert', 'JornadaController@ViewInsert')->name('ViewInsertJornada');
+Route::post('Jornada/insert', 'JornadaController@InsertJornada')->name('InsertJornada');
+Route::get('Jornada/view', 'JornadaController@ViewJornada')->name('ViewJornada');
+Route::get('Jornada/delete/{id}', 'JornadaController@DeleteJornada')->name('DeleteJornada');
+Route::get('Jornada/update/{id}', 'JornadaController@DatosUpdate')->name('ViewUpdateJornada');
+Route::post('Jornada/update', 'JornadaController@UpdateJornada')->name('UpdateJornada');
+#endregion
+ 
+#region sector
+Route::get('Sector/insert', 'SectorController@ViewInsert')->name('ViewInsertSector');
+Route::post('Sector/insert', 'SectorController@InsertSector')->name('InsertSector');
+Route::get('Sector/view', 'SectorController@ViewSector')->name('ViewSector');
+Route::get('Sector/delete/{id}', 'SectorController@DeleteSector')->name('DeleteSector');
+Route::get('Sector/update/{id}', 'SectorController@DatosUpdate')->name('DatosUpdateSector');
+Route::post('Sector/update', 'SectorController@UpdateSector')->name('SectorUpdateBD');
+#endregion 
+
+#region curso
+Route::get('Curso/insert', 'CursoController@ViewInsert')->name('ViewInsertCurso');
+Route::post('Curso/insert', 'CursoController@InsertCurso')->name('InsertCurso');
+Route::get('Curso/view', 'CursoController@ViewCurso')->name('ViweCurso');
+Route::get('Curso/delete/{id}', 'CursoController@DeleteCurso')->name('DeleteCurso');
+Route::get('Curso/update/{id}', 'CursoController@DatosUpdate')->name('ViewUpdateCurso');
+Route::post('Curso/update', 'CursoController@UpdateCurso')->name('UpdateCurso');
+
+#endregion
+
+#region empresa
+Route::get('Empresa/insert', 'EmpresaController@ViewInsert')->name('ViewInsertEmpresa');
+Route::post('Empresa/insert', 'EmpresaController@InsertEmpresa')->name('InsertEmpresa');
+Route::get('Empresa/view', 'EmpresaController@ViewEmpresa')->name('ViewEmpresa');
+Route::get('Empresa/delete/{id}', 'EmpresaController@DeleteEmpresa')->name('DeleteEmpresa');
+Route::get('Empresa/update/{id}', 'EmpresaController@DatosUpdate')->name('ViewUpdateEmpresa');
+Route::post('Empresa/update', 'EmpresaController@UpdateEmpresa')->name('UpdateEmpresas');
+#endregion
+
+#region convenio
+Route::get('Convenio/insert', 'ConvenioController@ViewInsert')->name('ViewInsertConvenio');
+Route::post('Convenio/insert', 'ConvenioController@InsertConvenio')->name('InsertConvenio');
+Route::get('Convenio/view', 'ConvenioController@ViewConvenio')->name('ViewConvenio');
+Route::get('Convenio/delete/{id}', 'ConvenioController@Deleteconvenio')->name('DeleteConvenio');
+Route::get('Convenio/update/{id}', 'ConvenioController@DatosUpdate')->name('ViewUpdateConvenio');
+Route::post('Convenio/update', 'ConvenioController@UpdateConvenio')->name('UpdateConvenio');
+#endregion

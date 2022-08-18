@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ver Pais</title>
+    <title>Insertar Sector</title>
 </head>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <table border>
     <tr>
@@ -31,53 +30,18 @@
     </tr>
 </table> <br><br><br><br>
 
-<body> 
-    <table border>
-        <tr>
-            <td>Nombre del pais</td> 
-        </tr> 
-        <tr>
-            @foreach ($objeto as $pais)       
-            <td>{{ $pais->NombrePaisCurso }} </td> 
-            <td>
-                <button onclick="eliminar( {{$pais->id}} )">Eliminar</button>
-                <a href=" {{ route('ViewUpdate', $pais) }}"><i>Actualizar</i></a>
-            </td>
-           
-        </tr> 
-        @endforeach
-    </table>
+
+<body>
+    <form action="{{ route('InsertSector') }}" method="POST">
+        @csrf
+        <label for="">Nombre del Sector:</label>
+        <input type="text" name="NombreSector" id="NombreSector"><br><br>
+
+        <label for="">Nombre del Nuevo Sector:</label>
+        <input type="text" name="NombreNuevoSector" id="NombreNuevoSector"><br><br>
 
 
-
-<script type="text/javascript">
-            
-        function eliminar(id){
-                
-            swal({
-                title: "¿Estas seguro de eliminar?",
-                text: "Si eliminas este programa no podra ser recuperado",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                
-            .then((willDelete) => {
-                           
-                if (willDelete) {
-                    location.href = "delete/" + id + "/";
-                
-                    swal("Poof! El programa fue eliminado!", {
-                    icon: "success",
-                    });    
-                
-                } else {
-                    swal("El programa no se elimino");
-                }
-            });     
-        }
-                
-                
-</script>    
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

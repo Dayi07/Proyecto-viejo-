@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ver Pais</title>
+    <title>Ver Jornada</title>
 </head>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -34,20 +34,20 @@
 <body> 
     <table border>
         <tr>
-            <td>Nombre del pais</td> 
+        <td>Tipo de identificacion</td> 
+        <td>Nombre de la Empresa</td>
         </tr> 
         <tr>
-            @foreach ($objeto as $pais)       
-            <td>{{ $pais->NombrePaisCurso }} </td> 
+        @foreach ($emp as $item)
+            <td>{{$item->TipoIdentificacion}}</td>
+            <td>{{$item->NombreEmpresa}}</td>
             <td>
-                <button onclick="eliminar( {{$pais->id}} )">Eliminar</button>
-                <a href=" {{ route('ViewUpdate', $pais) }}"><i>Actualizar</i></a>
+                <button onclick="eliminar( {{$item->id}} )">Eliminar</button>
+                <a href=" {{ route('ViewUpdateEmpresa', $item->id) }}"><i>Actualizar</i></a>
             </td>
-           
         </tr> 
         @endforeach
     </table>
-
 
 
 <script type="text/javascript">

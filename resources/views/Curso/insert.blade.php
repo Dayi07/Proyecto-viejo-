@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ver Pais</title>
+    <title>Insertar Sector</title>
 </head>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <table border>
     <tr>
@@ -30,54 +29,49 @@
         <td><a href="{{ route('ViewConvenio') }}"> Ver Convenio</a></td>
     </tr>
 </table> <br><br><br><br>
+ 
 
-<body> 
-    <table border>
-        <tr>
-            <td>Nombre del pais</td> 
-        </tr> 
-        <tr>
-            @foreach ($objeto as $pais)       
-            <td>{{ $pais->NombrePaisCurso }} </td> 
-            <td>
-                <button onclick="eliminar( {{$pais->id}} )">Eliminar</button>
-                <a href=" {{ route('ViewUpdate', $pais) }}"><i>Actualizar</i></a>
-            </td>
-           
-        </tr> 
+<body>
+    <form action="{{ route('InsertCurso') }}" method="POST">
+        @csrf
+
+        <label for="">Numero del Curso:</label>
+        <input type="number" name="NumeroCursos"  id="NumeroCursos"> <br><br>
+
+        <label for="">Nombre del Curos:</label>
+        <input type="text" name="NombreCurso" id="NombreCurso"><br><br>
+
+        <label for="">Estado Curso:</label>
+        <input type="text" name="EstadoCurso"  id="EstadoCurso"> <br><br>
+
+        <label for="">Tipo Curso:</label>
+        <input type="text" name="TipoCurso" id="TipoCurso"> <br><br>
+
+
+        <label for="">Jornada al que pertenece:</label> 
+        <select name="id_jornada" id="id_jornada">
+        @foreach ($jor as $jornada)
+            <option value="{{$jornada->id}}">{{ $jornada->NombreJornada }}</option>
         @endforeach
-    </table>
+        </select><br><br>
 
 
+        <label for="">Sector al que pertenece:</label> 
+        <select name="id_sector" id="id_sector">    
+        @foreach ($sec as $sector)
+            <option value="{{$sector->id}}">{{ $sector->NombreSector }}</option>
+        @endforeach
+        </select><br><br>
 
-<script type="text/javascript">
-            
-        function eliminar(id){
-                
-            swal({
-                title: "¿Estas seguro de eliminar?",
-                text: "Si eliminas este programa no podra ser recuperado",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                
-            .then((willDelete) => {
-                           
-                if (willDelete) {
-                    location.href = "delete/" + id + "/";
-                
-                    swal("Poof! El programa fue eliminado!", {
-                    icon: "success",
-                    });    
-                
-                } else {
-                    swal("El programa no se elimino");
-                }
-            });     
-        }
-                
-                
-</script>    
+
+        <label for="">Municipio al que pertenece:</label> 
+        <select name="id_municipio" id="id_municipio">
+        @foreach ($mun as $municipio)           
+            <option value="{{$municipio->id}}">{{$municipio->NombreMunicipioCurso}}</option>
+        @endforeach
+        </select><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

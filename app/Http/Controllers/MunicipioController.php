@@ -60,7 +60,7 @@ class MunicipioController extends Controller
         $instancia->update();
 
         return redirect('Municipio/view');
-    }
+    } 
 
 
 
