@@ -92,3 +92,16 @@ Route::get('Convenio/delete/{id}', 'ConvenioController@Deleteconvenio')->name('D
 Route::get('Convenio/update/{id}', 'ConvenioController@DatosUpdate')->name('ViewUpdateConvenio');
 Route::post('Convenio/update', 'ConvenioController@UpdateConvenio')->name('UpdateConvenio');
 #endregion
+
+#region programa de formacion
+Route::get('ProgramaFormacion/insert', 'ProgramaFormController@ViewInsert')->name('ViewInsertPrograma');
+Route::post('ProgramaFormacion/insert', 'ProgramaFormController@InsertPrograma')->name('InsertProgramaFor');
+Route::get('ProgramaFormacion/view', 'ProgramaFormController@ViewPrograma')->name('ViewPrograma');
+Route::get('ProgramaFormacion/delete/{id}', 'ProgramaFormController@DeletePrograma')->name('DeleteProgramaForm');
+Route::get('ProgramaFormacion/update/{id}', 'ProgramaFormController@DatosUpdate')->name('ViewUpdateProgramaForm');
+Route::post('ProgramaFormacion/update', 'ProgramaFormController@UpdatePrograma')->name('UpdateProgramaForm');
+Route::get('ProgramaFormacion/updateFile/{id}', 'ProgramaFormController@ViewUpdateFile')->name('ViewUpdateFile');
+Route::post('ProgramaFormacion/updateFile', 'ProgramaFormController@UpdateFile')->name('UpdateFilePrograma');
+
+#endregion
+ 

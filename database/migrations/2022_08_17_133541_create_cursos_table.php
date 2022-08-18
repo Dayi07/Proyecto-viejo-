@@ -20,7 +20,7 @@ class CreateCursosTable extends Migration
             $table->string('EstadoCurso');
             $table->string('TipoCurso');
             $table->unsignedBigInteger('id_municipio');
-            $table->foreign('id_municicpio')->references('id')->on('municipio_cursos');
+            $table->foreign('id_municipio')->references('id')->on('municipio_cursos');
             $table->unsignedBigInteger('id_sector');
             $table->foreign('id_sector')->references('id')->on('sectors');
             $table->unsignedBigInteger('id_jornada');
