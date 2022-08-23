@@ -102,6 +102,49 @@ Route::get('ProgramaFormacion/update/{id}', 'ProgramaFormController@DatosUpdate'
 Route::post('ProgramaFormacion/update', 'ProgramaFormController@UpdatePrograma')->name('UpdateProgramaForm');
 Route::get('ProgramaFormacion/updateFile/{id}', 'ProgramaFormController@ViewUpdateFile')->name('ViewUpdateFile');
 Route::post('ProgramaFormacion/updateFile', 'ProgramaFormController@UpdateFile')->name('UpdateFilePrograma');
-
 #endregion
  
+#region programa especial
+Route::get('ProgramaEspecial/insert', 'ProgramaEspController@ViewInsert')->name('ViewInsertEspecial');
+Route::post('ProgramaEspecial/insert', 'ProgramaEspController@InsertEspecial')->name('InsertEspecial');
+Route::get('ProgramaEspecial/view', 'ProgramaEspController@ViewEspecial')->name('ViewEspecial');
+Route::get('ProgramaEspecial/delete/{id}', 'ProgramaEspController@DeleteEspecial')->name('DeleteEspecial');
+Route::get('ProgramaEspecial/update/{id}', 'ProgramaEspController@ViewUpdate')->name('ViewUpdateEspecial');
+Route::post('ProgramaEspecial/update', 'ProgramaEspController@UpdateEspecial')->name('UpdateEspecial');
+#endregion
+
+#region Regional
+Route::get('Regional/insert', 'RegionalController@ViewInsert')->name('ViewInsertRegional');
+Route::post('Regional/insert', 'RegionalController@InsertRegional')->name('InsertRegional');
+Route::get('Regional/view', 'RegionalController@ViewRegional')->name('ViewRegional');
+Route::get('Regional/delete/{id}', 'RegionalController@DeleteRegional')->name('DeleteRegional');
+Route::get('Regional/update/{id}', 'RegionalController@ViewUpdate')->name('ViewUpdateRegional');
+Route::post('Regional/update', 'RegionalController@UpdateRegional')->name('UpdateRegional');
+#endregion
+
+#region Centro
+Route::get('Centro/insert', 'CentroController@ViewInsert')->name('ViewInsertCentro');
+Route::post('Centro/insert', 'CentroController@InsertCentro')->name('InsertCentro');
+Route::get('Centro/view', 'CentroController@ViewCentro')->name('ViewCentro');
+Route::get('Centro/delete/{id}', 'CentroController@DeleteCentro')->name('DeleteCentro');
+Route::get('Centro/update/{id}', 'CentroController@ViewUpdate')->name('ViewUpdateCentro');
+Route::post('Centro/update', 'CentroController@UpdateCentro')->name('UpdateCentro');
+#endregion
+
+#region Ficha
+Route::get('Ficha/insert', 'FichaController@ViewInsert')->name('ViewInsertFicha');
+Route::post('Ficha/insert', 'FichaController@InsertFicha')->name('InsertFicha');
+Route::get('Ficha/view', 'FichaController@ViewFicha')->name('ViewFicha');
+Route::get('Ficha/delete/{id}', 'FichaController@DeleteFicha')->name('DeleteFicha');
+Route::get('Ficha/update/{id}', 'FichaController@ViewUpdate')->name('ViewUpdateFicha');
+Route::post('Ficha/update', 'FichaController@UpdateFicha')->name('UpdateFicha');
+#endregion
+
+#region Aprendiz
+Route::get('Aprendiz/insert', 'AprendizController@ViewInsert')->name('ViewInsertAprendiz');
+Route::post('Aprendiz/insert', 'AprendizController@InsertAprendiz')->name('InsertAprendiz');
+Route::get('Aprendiz/view', 'AprendizController@ViewAprendiz')->name('ViewAprendiz');
+Route::get('Aprendiz/delete/{id}', 'AprendizController@DeleteAprendiz')->name('DeleteAprendiz');
+Route::get('Aprendiz/update/{id}', 'AprendizController@ViewUpdate')->name('ViewUpdateAprendiz');
+Route::post('Aprendiz/update', 'AprendizController@UpdateAprendiz')->name('UpdateAprendiz');
+#endregion

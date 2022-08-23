@@ -15,6 +15,11 @@ class CreateProgramaEspecialsTable extends Migration
     {
         Schema::create('programa_especials', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('NombreProgEspecial');
+            $table->string('ModalidadProgEspecial');
+            $table->string('URL');
+            $table->unsignedBigInteger('id_sector');
+            $table->foreign('id_sector')->references('id')->on('sectors');
             $table->timestamps();
         });
     }

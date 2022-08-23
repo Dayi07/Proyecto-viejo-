@@ -32,7 +32,7 @@ class ProgramaFormController extends Controller
 
         return redirect('ProgramaFormacion/view');
     }
- 
+  
     public function ViewPrograma()
     {
         $pro = DB::table('programa_formacions')
