@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 
-use function Ramsey\Uuid\v1;
-
 class RegionalController extends Controller
 {
     public function ViewInsert()

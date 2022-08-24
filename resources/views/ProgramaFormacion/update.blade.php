@@ -20,7 +20,7 @@
         <label for="">Duracion del programa:</label>
         <input type="text" value="{{ $pro->DuracionPrograma }}" name="DuracionPrograma" id="DuracionPrograma"> <br><br>
  
-        <label for="">Version del Programa:</label>
+       <label for="">Version del Programa:</label>
         <input type="text" value="{{ $pro->VersionPrograma }}" name="VersionPrograma" id="VersionPrograma"> <br><br>
         
         <label for="">Nivel de Formacion:</label>

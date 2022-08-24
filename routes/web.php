@@ -11,13 +11,15 @@
 |
 */
 
-use App\Http\Controllers\MunicipioController;
-use App\Http\Controllers\PaisController;
-
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome'); 
+});
+
+
+Route::get('/c', function () {
+    return view('content'); 
 });
 
 #region pais 
@@ -35,7 +37,7 @@ Route::post('Municipio/insert', 'MunicipioController@InsertMun')->name('InsertMu
 Route::get('Municipio/view', 'MunicipioController@ViewMun')->name('ViewMunicipio');
 Route::get('Municipio/delete/{id}', 'MunicipioController@DeleteMun');
 Route::get('Municipio/update/{id}', 'MunicipioController@DatosUpdate')->name('DatosUpdateMun');
-Route::post('Municipio/update', 'MunicipioController@Update')->name('Update');
+Route::post('Municipio/update', 'MunicipioController@Update')->name('UpdateMunicipio');
 #endregion
 
 #region departamento
@@ -68,11 +70,10 @@ Route::post('Sector/update', 'SectorController@UpdateSector')->name('SectorUpdat
 #region curso
 Route::get('Curso/insert', 'CursoController@ViewInsert')->name('ViewInsertCurso');
 Route::post('Curso/insert', 'CursoController@InsertCurso')->name('InsertCurso');
-Route::get('Curso/view', 'CursoController@ViewCurso')->name('ViweCurso');
+Route::get('Curso/view', 'CursoController@ViewCurso')->name('ViewCurso');
 Route::get('Curso/delete/{id}', 'CursoController@DeleteCurso')->name('DeleteCurso');
 Route::get('Curso/update/{id}', 'CursoController@DatosUpdate')->name('ViewUpdateCurso');
 Route::post('Curso/update', 'CursoController@UpdateCurso')->name('UpdateCurso');
-
 #endregion
 
 #region empresa
@@ -147,4 +148,22 @@ Route::get('Aprendiz/view', 'AprendizController@ViewAprendiz')->name('ViewAprend
 Route::get('Aprendiz/delete/{id}', 'AprendizController@DeleteAprendiz')->name('DeleteAprendiz');
 Route::get('Aprendiz/update/{id}', 'AprendizController@ViewUpdate')->name('ViewUpdateAprendiz');
 Route::post('Aprendiz/update', 'AprendizController@UpdateAprendiz')->name('UpdateAprendiz');
+#endregion
+
+#region Ocupacion
+Route::get('Ocupacion/insert', 'OcupacionController@ViewInsert')->name('ViewInsertOcupacion');
+Route::post('Ocupacion/insert', 'OcupacionController@InsertOcupacion')->name('InsertOcupacion');
+Route::get('Ocupacion/view', 'OcupacionController@ViewOcupacion')->name('ViewOcupacion');
+Route::get('Ocupacion/delete/{id}', 'OcupacionController@DeleteOcupacion')->name('DeleteOcupacion');
+Route::get('Ocupacion/update/{id}', 'OcupacionController@ViewUpdate')->name('ViewUpdateOcupacion');
+Route::post('Ocupacion/update', 'OcupacionController@UpdateOcupacion')->name('UpdateOcupacion');
+#endregion
+
+#region Hora
+Route::get('Hora/insert', 'HoraController@ViewInsert')->name('ViewInsertHora');
+Route::post('Hora/insert', 'HoraController@InsertHora')->name('InsertHora');
+Route::get('Hora/view', 'HoraController@ViewHora')->name('ViewHora');
+Route::get('Hora/delete/{id}', 'HoraController@DeleteHora')->name('DeleteHora');
+Route::get('Hora/update/{id}', 'HoraController@ViewUpdate')->name('ViewUpdateHora');
+Route::post('Hora/update', 'HoraController@UpdateHora')->name('UpdateHora');
 #endregion

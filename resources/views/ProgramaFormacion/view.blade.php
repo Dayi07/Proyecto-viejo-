@@ -14,7 +14,7 @@
         <td>PDF del programa</td>
         <td>Acciones</td>
     </tr>
-    <tr>
+    <tr> 
         @foreach ($pro as $item)
             <td>{{$item->NombrePrograma}}</td> 
             <td>{{$item->ModalidadFormacion}}</td> 

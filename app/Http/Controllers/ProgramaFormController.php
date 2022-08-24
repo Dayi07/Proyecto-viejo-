@@ -34,7 +34,7 @@ class ProgramaFormController extends Controller
     }
   
     public function ViewPrograma()
-    {
+    { 
         $pro = DB::table('programa_formacions')
         ->join('sectors', 'sectors.id', '=', 'programa_formacions.id_sector')
         ->select('programa_formacions.*', 'sectors.NombreSector')

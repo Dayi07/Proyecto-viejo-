@@ -17,6 +17,8 @@ class CreateOcupacionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('NombreOcupacion');
             $table->integer('CodigoHora');
+            $table->unsignedBigInteger('id_sector');
+            $table->foreign('id_sector')->references('id')->on('sectors');
             $table->timestamps();
         });
     }

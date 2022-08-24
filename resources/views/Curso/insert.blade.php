@@ -1,45 +1,97 @@
-@extends('menu')
+@extends('welcome')
 
-@section('form')
-   <form action="{{ route('InsertCurso') }}" method="POST">
-        @csrf
+@section('content')
+    
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Curso</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Insertar</a>
+                                </li>
+                                
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <label for="">Numero del Curso:</label>
-        <input type="number" name="NumeroCursos"  id="NumeroCursos"> <br><br>
+    <div class="content-body">
+        <form action="{{ route('InsertCurso') }}" method="POST">
+            @csrf
+            <div class="card">
+                 <div class="card-header">
+                     <h4 class="card-title">Insertar Curso</h4>
+                 </div>
+                 <div class="card-body">
+                     <div class="row">
+                         <div class="col-xl-4 col-md-6 col-12">
+                             <div class="mb-1">
+                                 <label class="form-label" for="basicInput">Ingrese numero del curso:</label>
+                                 <input type="numbre" class="form-control" id="NumeroCursos" name="NumeroCursos" placeholder="Numero" />
+                             </div>
+                         </div>  
+                         <div class="col-xl-4 col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="basicInput">Ingrese nombre del curso:</label>
+                                <input type="text" class="form-control" id="NombreCurso" name="NombreCurso" placeholder="Curso" />
+                            </div>
+                        </div> 
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="basicInput">Ingrese estado del curso:</label>
+                                <input type="text" class="form-control" id="EstadoCurso" name="EstadoCurso" placeholder="Estado" />
+                            </div>
+                        </div> 
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="basicInput">Ingrese tipo del curso:</label>
+                                <input type="text" class="form-control" id="TipoCurso" name="TipoCurso" placeholder="Tipo" />
+                            </div>
+                        </div> 
 
-        <label for="">Nombre del Curos:</label>
-        <input type="text" name="NombreCurso" id="NombreCurso"><br><br>
-
-        <label for="">Estado Curso:</label>
-        <input type="text" name="EstadoCurso"  id="EstadoCurso"> <br><br>
-
-        <label for="">Tipo Curso:</label>
-        <input type="text" name="TipoCurso" id="TipoCurso"> <br><br>
-
-
-        <label for="">Jornada al que pertenece:</label> 
-        <select name="id_jornada" id="id_jornada">
-        @foreach ($jor as $jornada)
-            <option value="{{$jornada->id}}">{{ $jornada->NombreJornada }}</option>
-        @endforeach
-        </select><br><br>
-
-
-        <label for="">Sector al que pertenece:</label> 
-        <select name="id_sector" id="id_sector">    
-        @foreach ($sec as $sector)
-            <option value="{{$sector->id}}">{{ $sector->NombreSector }}</option>
-        @endforeach
-        </select><br><br>
-
-
-        <label for="">Municipio al que pertenece:</label> 
-        <select name="id_municipio" id="id_municipio">
-        @foreach ($mun as $municipio)           
-            <option value="{{$municipio->id}}">{{$municipio->NombreMunicipioCurso}}</option>
-        @endforeach
-        </select><br><br>
-
-        <button type="submit">Enviar</button>
-    </form>
-@endsection
+                         <div class="col-xl-4 col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="basicInput">Seleccione nombre del jornada:</label>
+                                <select class="form-select" aria-label="Default select example" name="id_jornada" id="id_jornada">
+                                    @foreach ($jor as $jornada)
+                                    <option value="{{$jornada->id}}">{{ $jornada->NombreJornada }}</option>
+                                    @endforeach
+                                </select>                             
+                            </div>
+                         </div> 
+                         <div class="col-xl-4 col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="basicInput">Seleccione nombre del sector:</label>
+                                <select class="form-select" aria-label="Default select example" name="id_sector" id="id_sector">
+                                    @foreach ($sec as $sector)
+                                    <option value="{{$sector->id}}">{{ $sector->NombreSector }}</option>
+                                    @endforeach
+                                </select>                             
+                            </div>
+                         </div><div class="col-xl-4 col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="basicInput">Seleccione nombre del municipio:</label>
+                                <select class="form-select" aria-label="Default select example" name="id_municipio" id="id_municipio">
+                                    @foreach ($mun as $municipio)           
+                                    <option value="{{$municipio->id}}">{{$municipio->NombreMunicipioCurso}}</option>
+                                    @endforeach
+                                </select>                             
+                            </div>
+                         </div>
+                     </div>
+                     <button class="btn btn-primary" type="submit">Guardar</button>
+                 </div>
+             </div>
+        </form>
+    </div>
+    
+    @endsection

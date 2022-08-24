@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use Illuminate\Support\Facades\DB;
-use function Ramsey\Uuid\v1;
 
 class DepartamentoController extends Controller
 {

@@ -26,6 +26,7 @@
         <td>{{ $item->NombrePrograma }}</td>
         <td>{{ $item->NombreCentro }}</td>
 
+
         <td>
             <button onclick="eliminar( {{$item->id}} )">Eliminar</button>
             <a href=" {{ route('ViewUpdateFicha', $item->id) }}"><i>Actualizar</i></a>
