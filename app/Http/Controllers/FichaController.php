@@ -35,18 +35,18 @@ class FichaController extends Controller
     }
 
     public function ViewFicha()
-    {
-        $fic = DB::table('fichas')
+    {        
+
+        $ficha = DB::table('fichas')
         ->join('centros', 'centros.id', '=', 'fichas.id_centro')
         ->join('jornadas', 'jornadas.id', '=', 'fichas.id_jornada')
         ->join('programa_formacions', 'programa_formacions.id', '=', 'fichas.id_programa_formacion')
-        ->join('aprendizs', 'aprendizs.id_ficha', '=', 'fichas.id')
         ->select('fichas.*', 'centros.NombreCentro', 'jornadas.NombreJornada', 'programa_formacions.NombrePrograma')
         ->get();
 
-        return view('Ficha/view', compact('fic'));
+        return view('Ficha/view', compact('ficha'));
     }
-
+ 
     public function DeleteFicha($id)
     {
         $ficha = App\Ficha::FindOrFail($id);

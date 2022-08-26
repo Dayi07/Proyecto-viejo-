@@ -23,7 +23,7 @@ class CentroController extends Controller
 
         return redirect('Centro/view');
     }
-
+ 
     public function ViewCentro()
     {
         $cen = DB::table('centros')

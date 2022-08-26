@@ -37,17 +37,31 @@
 
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
 
-    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+        <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
         <div class="navbar-container d-flex content">
+            <div class="bookmark-wrapper d-flex align-items-center">
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav bookmark-icons">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+                </ul>
             
+            </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
-
+                <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i>{{--<span class="badge rounded-pill bg-danger badge-up">3</span>--}}</a>                    
+                {{-- NOTIFICACIONES --}}
+                </li>
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Nombre Apellido</span><span class="user-status">Coordinador</span></div><span class="avatar"><img class="round" src="images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Nombre Apellido</span><span class="user-status">Coordinador</span></div><span class="avatar"><img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                         <a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="me-50" data-feather="mail"></i> Inbox</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"><i class="me-50" data-feather="settings"></i> Settings</a>
                         <a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
@@ -57,11 +71,12 @@
         </div>
     </nav>
 
+
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item me-auto"><a class="navbar-brand" href="#"><span class="brand-logo">
-                        <img src="images/logo/logo.png" alt="">
+                        <img src="{{asset('images/logo/logo.png')}}" alt="">
                             </span>
                         <h2 style="color:rgb(248, 109, 23);" class="brand-text">GAFP - CTGI</h2>
                     </a></li>
@@ -254,10 +269,24 @@
     <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2022<a class="ms-25" href="https://investigacionctgi.com/" target="_blank">GIAITEQ</a><span class="d-none d-sm-inline-block">, SENNOVA CTGI</span></span></p>
 </footer>
 <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
-<script src="vendors/js/vendors.min.js"></script>
-<script src="js/core/app-menu.js"></script>
-<script src="js/core/app.js"></script>
-<script src="js/scripts/forms/form-tooltip-valid.js"></script>
+<script src="{{ asset('vendors/js/vendors.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/responsive.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/datatables.checkboxes.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/datatables.buttons.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/jszip.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/pdfmake.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/vfs_fonts.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/buttons.print.min.js') }}"></script>
+<script src="{{ asset('vendors/js/tables/datatable/dataTables.rowGroup.min.js') }}"></script>
+<script src="{{ asset('vendors/js/pickers/flatpickr/flatpickr.min.js') }}"></script>
+<script src="{{ asset('js/core/app-menu.js') }}"></script>
+<script src="{{ asset('js/core/app.js') }}"></script>
+<script src="{{ asset('js/scripts/forms/form-tooltip-valid.js') }}"></script>
+<script src="{{ asset('js/scripts/tables/table-datatables-basic.js') }}"></script>
 <script>
     $(window).on('load', function() {
         if (feather) {

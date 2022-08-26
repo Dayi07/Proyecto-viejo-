@@ -21,7 +21,7 @@ class CreateCentrosTable extends Migration
             $table->timestamps();
         });
     }
- 
+  
     /**
      * Reverse the migrations.
      *

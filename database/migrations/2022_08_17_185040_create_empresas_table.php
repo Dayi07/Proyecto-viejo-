@@ -17,6 +17,7 @@ class CreateEmpresasTable extends Migration
             $table->bigIncrements('id');
             $table->string('TipoIdentificacion');
             $table->string('NombreEmpresa');
+            $table->integer('IdEmpresa');
             $table->timestamps();
         });
     }

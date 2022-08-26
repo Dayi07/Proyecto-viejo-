@@ -37,7 +37,7 @@
                             </tr> 
                             <tr>
                                 @foreach ($infomun as $item)       
-                                <td>{{ $item->NombreMunicipioCurso }} </td> 
+                                <td>{{ $item->NombreMunicipioCurso }} </td>  
                                 <td>{{ $item->NombreDepartamentoCurso }}</td>
                                 <td>
                                     <a onclick="eliminar( {{$item->id}} )">
@@ -57,7 +57,9 @@
                             </tr> 
                             @endforeach 
                     
-                          </table>
+                          </table><br>
+
+                          {{ $infomun->links() }}
                      </div>
             </div>
         </div>

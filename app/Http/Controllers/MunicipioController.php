@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 
 class MunicipioController extends Controller
-{
+{ 
     public function ViewInsert()
     {
         $infodep = App\DepartamentoCurso::all();
@@ -33,7 +33,7 @@ class MunicipioController extends Controller
         $infomun = DB::table('municipio_cursos')
         ->join('departamento_cursos', 'departamento_cursos.id', '=', 'municipio_cursos.id_departamento')
         ->select('municipio_cursos.*', 'departamento_cursos.NombreDepartamentoCurso')
-        ->get();
+        ->paginate(30);
         return view('MunicipioCurso/view', compact('infomun'));
     }
 

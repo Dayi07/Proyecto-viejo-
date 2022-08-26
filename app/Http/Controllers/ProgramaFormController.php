@@ -28,7 +28,7 @@ class ProgramaFormController extends Controller
         $programa->NivelFormacion = $prom->NivelFormacion;
         $programa->id_sector = $prom->id_sector;
         $programa->URL = $ruta;
-        $programa->save();
+        $programa->save(); 
 
         return redirect('ProgramaFormacion/view');
     }

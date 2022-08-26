@@ -17,6 +17,7 @@ class EmpresaController extends Controller
         $empresa = new App\Empresa();
         $empresa->TipoIdentificacion = $emp->TipoIdentificacion;
         $empresa->NombreEmpresa = $emp->NombreEmpresa;
+        $empresa->IdEmpresa = $emp->IdEmpresa;
         $empresa->save();
 
         return redirect('Empresa/view');
@@ -48,6 +49,7 @@ class EmpresaController extends Controller
         $empresa = App\Empresa::FindOrFail($emp->id);
         $empresa->TipoIdentificacion = $emp->TipoIdentificacion;
         $empresa->NombreEmpresa = $emp->NombreEmpresa;
+        $empresa->IdEmpresa = $emp->IdEmpresa;
         $empresa->update();
 
         return redirect('Empresa/view');

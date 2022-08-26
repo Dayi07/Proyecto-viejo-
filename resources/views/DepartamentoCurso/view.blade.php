@@ -57,7 +57,8 @@
                             </tr> 
                             @endforeach 
                     
-                          </table>
+                          </table><br>
+                          {{$departamentos->links()}}
                      </div>
             </div>
         </div>

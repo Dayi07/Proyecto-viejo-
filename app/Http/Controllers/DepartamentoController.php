@@ -29,7 +29,7 @@ class DepartamentoController extends Controller
         $departamentos = DB::table('departamento_cursos')
         ->join('pais_cursos', 'pais_cursos.id', '=', 'departamento_cursos.id_pais')
         ->select('departamento_cursos.*', 'pais_cursos.NombrePaisCurso')
-        ->get();
+        ->paginate(30);
         return view('DepartamentoCurso/view', compact('departamentos'));
     }
 

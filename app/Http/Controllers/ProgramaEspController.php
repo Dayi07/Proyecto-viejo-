@@ -18,7 +18,7 @@ class ProgramaEspController extends Controller
 
     public function InsertEspecial(Request $esp)
     {
-        $especial = new App\ProgramaEspecial();
+        $especial = new App\ProgramaEspecial();  
         $ruta = Storage::disk('public')->put('ProgramaFormacion', $esp->file('URL'));
         $especial->NombreProgEspecial = $esp->NombreProgEspecial;
         $especial->ModalidadProgEspecial = $esp->ModalidadProgEspecial;
